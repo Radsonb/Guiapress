@@ -1,0 +1,39 @@
+<%- include('partials/header.ejs') %> 
+<%- include('partials/homenavbar.ejs') %>
+<body>
+  <hr />
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-4">Bem vindo ao GuiaPress!</h1>
+      <p class="lead">
+        Este é um simples blog de compartilhamento de informações.
+      </p>
+      <hr class="my-4" />
+      <p>
+        O objetivo é compartilhar informações a respeito do mundo de
+        desenvolvimento de sistemas.
+      </p>
+      <a class="btn btn-primary btn-lg" href="#" role="button">Leia mais</a>
+    </div>
+    <% articles.forEach(article => { %>
+
+    <hr />
+    <div class="card">
+      <div class="card-header"><h2><%= article.title %></h2></div>
+      <div class="card-body">
+        <a href="<%= article.slug %>" class="btn btn-success">Ler artigo</a>
+      </div>
+    </div>
+    <br />
+    <% }) %>
+    <div class="row">
+      <div class="col col-12">
+        <a style="float: right" href="/articles/page/2">Next > > ></a>
+      </div>
+      
+      <hr>
+    </div>
+    <hr>
+  </div>
+</body>
+<%- include('partials/footer.ejs') %>
